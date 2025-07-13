@@ -174,6 +174,7 @@ def main():
     handcrafted_suffix = "_handcrafted" if args.is_handcrafted == "True" else "_alg_generated"
     output_filename = f"{args.method}_{args.model.replace('/','_')}{handcrafted_suffix}.txt"
     output_filepath = os.path.join(output_dir, output_filename)
+    args.is_handcrafted = True if args.is_handcrafted == "True" else False
 
     print(f"Analysis method: {args.method}")
     print(f"Model Alias: {args.model} (Family: {model_family})")
